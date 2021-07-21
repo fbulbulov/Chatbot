@@ -42,17 +42,22 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"]
-      "responses": ["Happy to help!", "Any time!", "My pleasure!", "Happy to help"]
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"],
+      "responses" : [
+          "Happy to help!", 
+          "Any time!",
+          "My pleasure!", 
+          "Happy to help"
+        ]
     },
     {
       "tag": "feel",
-      "patterns": ["I have a problems", "What is my diagnosis?", "I feel sick today", "I am not doing well today"]
+      "patterns": ["I have a problems", "What is my diagnosis?", "I feel sick today", "I am not doing well today"],
       "responses": ["What are the main symptoms?", "What did you ate?", "What are suffering from?"]
     },
     {
       "tag": "symptoms",
-      "patterns": ["I feel cold", "I have flue", "I am feeling fever", "My feel sick"]
+      "patterns": ["I feel cold", "I have flue", "I am feeling fever", "My feel sick"],
       "responses": ["When you want have appointment?", "Do you have free time tomorrow?", "Doctor is available this week, when you want to have appointment?"]
     },
 
@@ -95,7 +100,7 @@
     }
     {
         "tag": "negatives",
-        "patterns":["No", "nope","nah", "Not now", "I don't have time", "When else we can ave appointment?","I am busy"]
+        "patterns":["No", "nope","nah", "Not now", "I don't have time", "When else we can ave appointment?","I am busy"],
         "responses": ["When you have time?", "Let me know the available dates.", "Sure, when is the most conviniet day and time for you?"]
   ]
 }
