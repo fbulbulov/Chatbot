@@ -10,9 +10,92 @@
         "Hello",
         "Good Day",
         "Hello",
-        "Hoping you are doing well too"
+        "Hello, Medic!",
+        "Hi, there!",
+        "Good Day",
+        "Good Morning",
+        "Good Afternoon",
+        "Good evening"
       ],
-      "responses": []
+      "responses": [
+        "Hey!",
+        "Thanks for reaching us.",
+        "Hi there, how can I help you?",
+        "Hi, what can I do for you?",
+        "Hi, how is your day?",
+        "Fine, thanks and you?",
+        "Medic Assistant Here",
+        "Hi there, what can I do for you?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you!", "Goodbye"],
+      "responses": [
+        "See you later",
+        "Have a great day!",
+        "See you soon",
+        "Bye!",
+        "Good to talk with you!",
+        "Bye, Bye!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks a lot!"]
+      "responses": ["Happy to help!", "Any time!", "My pleasure!", "Happy to help"]
+    },
+    {
+      "tag": "feel",
+      "patterns": ["I have a problems", "What is my diagnosis?", "I feel sick today", "I am not doing well today"]
+      "responses": ["What are the main symptoms?", "What did you ate?", "What are suffering from?"]
+    },
+    {
+      "tag": "symptoms",
+      "patterns": ["I feel cold", "I have flue", "I am feeling fever", "My feel sick"]
+      "responses": ["When you want have appointment?", "Do you have free time tomorrow?", "Doctor is available this week, when you want to have appointment?"]
+    },
+
+     {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Apple Pay or Paypal?",
+        "Can I pay with cash?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal",
+        "We prefer not using cash."
+      ]
+    },
+
+    {
+        "tag": "postives",
+        "patterns": [
+            "yes",
+            "yep",
+            "sure",
+            "ok",
+            "okay",
+            "please",
+            "sure thing",
+            "yes please",
+            "okay please"
+        ],
+        "responses": [
+            "Great! I have scheduled an appointment for you",
+            "I have scheduled an appointment for you",
+            "Done",
+            "It's Done",
+            "It's all done",
+            "You are registered"
+        ]
     }
+    {
+        "tag": "negatives",
+        "patterns":["No", "nope","nah", "Not now", "I don't have time", "When else we can ave appointment?","I am busy"]
+        "responses": ["When you have time?", "Let me know the available dates.", "Sure, when is the most conviniet day and time for you?"]
   ]
 }
