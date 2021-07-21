@@ -2,61 +2,61 @@ import random
 import json
 
 import torch
-from torch._C import int16
+
 
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 #checking device
-device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 #opening the intents document
-with open ("intents.json", 'r') as json_data:
-    intents=json.load(json_data)
+with open('intents.json', 'r') as json_data:
+    intents = json.load(json_data)
 
 #uploading the trained weights 
-FILE= "data.pth"
-data=torch.load(FILE)
+FILE = "data.pth"
+data = torch.load(FILE)
 
 #torch model ingredients 
-input_size=data['input_size']
-hidden_size= data['hidden_size']
-output_size=data['output_size']
-all_words=data['all_words']
-tags=data['tags']
-model_state=data['model_state']
+input_size = data["input_size"]
+hidden_size = data["hidden_size"]
+output_size = data["output_size"]
+all_words = data['all_words']
+tags = data['tags']
+model_state = data["model_state"]
 
 #importing the model
-model=NeuralNet(input_size,hidden_size,output_size).to(devce)
+model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
 #bot configuration 
-name="Parisa"
-print ("Let's chat!(type quit to exit)")
+bot_name = "Parisa"
+print("Let's chat! (type 'quit' to exit)")
 while True:
-    sentence=input ("You: ")
-    if sentence = 'quit':
+    sentence = input("You: ")
+    if sentence == "quit":
         break
 
 #tokenization of the inputs
-    sentence=tokenize(sentence)
-    X=bag_of_words(sentence,all_words)
-    X=X.reshape(1, x.shape[0])
-    X=torch.from_numpy(X).to(device)
+    sentence = tokenize(sentence)
+    X = bag_of_words(sentence, all_words)
+    X = X.reshape(1, X.shape[0])
+    X = torch.from_numpy(X).to(device)
 
 #Output
     output = model(X)
     _, predicted = torch.max(output, dim=1)
 
 # tags
-    tag=tags[predicted.item()]
+    tag = tags[predicted.item()]
 
-    probs=torch.softmax(output, dim=1)
-    prob=probs[0][predicted.item()]
-    if prob.item()>0.75:
-        for intent in intents ['intents']:
-            if tag == intent['tag']
+    probs = torch.softmax(output, dim=1)
+    prob = probs[0][predicted.item()]
+    if prob.item() > 0.75:
+        for intent in intents['intents']:
+            if tag == intent["tag"]:
                 print(f"{bot_name}: {random.choice(intent['responses'])}")
-            else:
-                print(f"{bot_name}: I do not understand...")
+    else:
+        print(f"{bot_name}: I do not understand...")
