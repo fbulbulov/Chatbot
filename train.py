@@ -8,8 +8,6 @@ from torch.utils.data import Dataset,DataLoader
 
 from nltk_utils import bag_of_words, tokenize, stem
 
-from nltk.stem.porter import PorterStemmer
-from nltk.tokenize import word_tokenize
 
 from model import NeuralNet #importing the model from model.py
 
